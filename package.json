@@ -1,0 +1,23 @@
+{
+  "name": "beer-calc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kraczo",
+  "license": "ISC",
+  "keywords": [
+    "kalkulator piwny, obliczenia przy warzeniu piwa"
+  ],
+  "dependencies": {
+    "handlebars": "^4.0.5",
+    "hapi": "^10.5.0",
+    "hoek": "^3.0.4",
+    "inert": "^3.2.0",
+    "latest": "^0.2.0",
+    "path": "^0.12.7",
+    "vision": "^4.0.1"
+  }
+}
