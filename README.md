@@ -1,2 +1,2 @@
 # beer_calc
-MVC hapi js server.
+MVC hapi js static server.
