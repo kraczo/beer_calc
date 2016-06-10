@@ -1,9 +1,9 @@
-$(".header").html("<a href='#menu'></a>ile wody aby uzyskać zamierzone BLG");
+$(".header").html("<a href='#menu'></a>Ile cukru aby uzyskać zamierzony stopień nagazowania");
 $(document).ready(function(){
       $(".allForm").hide();
       $("#loader").show();
 
-      $(".allForm").load("ileDolacWody.html", function () {
+      $(".allForm").load("views/ileDodacCukru/ileDodacCukru.html", function () {
         $("#loader").fadeOut('fast', function() {
           $(".allForm").fadeIn('fast');
         });
@@ -18,7 +18,7 @@ $(document).ready(function(){
     
             $.ajax({
                 type: "POST",
-                url: '/ileDolacWody',
+                url: '/ileDodacCukru',
                 data: $('form').serialize(),
                 beforeSend: function() {
                 $('#response').hide();
@@ -30,9 +30,9 @@ $(document).ready(function(){
                 $('#response').show();
             },
             success: function(response) {
-                console.log($('input[name="iloscBrzeczki"]').val());
+                console.log('stopienNagazowania= ' + $('input[name="stopienNagazowania"]').val());
                 $('#response').empty();
-                $( "#response" ).append('--  Do ' + $('input[name="iloscBrzeczki"]').val() +'L brzeczki należy dolać ' + JSON.stringify(response) + 'L aby uzyskać gęstość '+ $('input[name="pozadanyStopienGestosci"]').val() +' blg  --');
+                $( "#response" ).append('-- Należy dodać <b> ' + JSON.stringify(response) + '</b> gramy cukru --');
                 }
             });
 

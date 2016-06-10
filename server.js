@@ -37,8 +37,10 @@ server.register(require('inert'), function(err) {
 var plugins = [
     
     { register : require('vision') }, //register Vision with others Plugins
-    { register : require('./modules/zacieranie/index.js') } 
+    { register : require('./modules/ileDolacWody/index.js') },
+    { register : require('./modules/ileDodacCukru/index.js') }
 ];
+
 
 /**
  * Routing Views

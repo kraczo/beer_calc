@@ -1,0 +1,29 @@
+
+ <script type="text/javascript" src="/public/js/script.js"></script>
+ <div class="allForm">
+ <h1 id="tytul_kalkulator">Przelicznik ilości dodanej wody aby uzyskać zamierzoną gęstość brzeczki</h1>
+
+<div class="form-style-5">
+<form id="form1" class="form-wrapper" method="post" >
+  <div id ="first">
+    <label for="number">Ilość brzeczki w litrach</label><input step="0.01" class="required" type="number" name="iloscBrzeczki" required data-parsley-type="number" size="100" />
+  </div>
+  <div>
+    <label for="number">Stopień gęstośći brzeczki w blg</label>
+    <input id="number" class="required" type="number" name="stopienGestosci" required data-parsley-type="number" size="24" />
+  </div>
+  <div>
+    <label for="number">Stopień pożądanej gęstości brzeczki w blg</label>
+    <input id="number" class="required" type="number" name="pozadanyStopienGestosci" required data-parsley-type="number" size="24" />
+  </div>
+  <div id="buttons">
+    <input type="submit" name="submit_1" value="Submit"  />
+    <input type="reset" name="reset" value="Reset" />
+  </div>
+  
+</form>
+</div>
+<div id="loader2"></div>
+<div id="response"></div>
+
+</div>

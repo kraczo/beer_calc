@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="author" content="www.frebsite.nl" />
     <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
-    <title>Beer calculator</title>
+    <title>{{title}}</title>
 
     <link type="text/css" rel="stylesheet" href="/public/css/style.css" />
     <link type="text/css" rel="stylesheet" href="/public/css/jquery.mmenu.all.css?v=6" />
@@ -36,6 +36,10 @@
           });
       });
     </script>
+
+    <script type="text/javascript" src="/public/js/nprogress.js"></script>
+    <link rel='stylesheet' href='/public/css/nprogress.css'/>
+
   </head>
   <body>
     <div id="page">
@@ -45,6 +49,12 @@
       </div>
       <div id="loader"></div>
       <div class="content">
+              <script type="text/javascript">
+              NProgress.configure({ minimum: 0.1 });
+    NProgress.start();
+    setTimeout(function() { NProgress.done(); $('.fade').removeClass('out'); }, 1000);
+
+    </script>
       {{{content}}}         
     </div>
     <nav id="menu">
@@ -63,10 +73,11 @@
               <li><a href="#/about/address">Kontakt</a></li>
             </ul>
           </li>
-          <li><a href="/zacieranie">Zacieranie</a></li>
-          <li><a href="#">Gotowanie</a></li>
+          <li><a href="/ileDolacWody">ileDolacWody</a></li>
+          <li><a href="/ileDodacCukru">ileDodacCukru</a></li>
           <li><a href="#">Butelkowanie</a></li>
         </ul>
     </nav>
+
   </body>
 </html>

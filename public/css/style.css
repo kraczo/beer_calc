@@ -109,14 +109,14 @@ nav:not(.mm-menu)
 		font-size: 16px;
 		font-weight: bold;
 		color: #fff;
-		line-height: 40px;
+		line-height: 30px;
 		
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 		
 		width: 100%;
-		height: 40px;
+		height: 30px;
 		padding: 0 50px;
 
 	} 
@@ -145,7 +145,7 @@ nav:not(.mm-menu)
 /*    float: left;*/
     padding-top: 5px;
     text-align: center;
-    width: 140px;
+    width: auto;
 }
 .form-style-5 div {
     padding-bottom: 4%;
@@ -176,6 +176,7 @@ margin-top: 0px;
  /*   background: #fff;*/
 /*    margin-bottom: 4%;*/
 /*    margin-top: 4%;*/
+	height: 40px;
     border: 1px solid #ccc;
     color: #555;
     font: 95% Arial, Helvetica, sans-serif;
@@ -317,7 +318,7 @@ textarea.parsley-error {
 	width: 40px;
 	height: 40px;
 	position: absolute;
-	top: 0;
+	top: -4px;
 	left: 20px;
 }
 .header a.contacts
@@ -409,12 +410,36 @@ li {
 	cursor: pointer;
 }
 #loader {
-  background:url(/public/gif/preloader.gif) no-repeat;
-  width:64px;
-  height:64px;
+  width: 64px;
+  height: 64px;
+  box-sizing: border-box;
+
+  border: solid 2px transparent;
+  border-top-color: #30C29E;
+  border-left-color: #30C29E;
+  border-radius: 50%;
+
+  -webkit-animation: nprogress-spinner 400ms linear infinite;
+          animation: nprogress-spinner 400ms linear infinite;
   position: fixed;
 	top:20%;
     left:60%;
+    display: none;
+
+}
+#loader2 {
+  width: 32px;
+  height: 32px;
+  box-sizing: border-box;
+
+  border: solid 2px transparent;
+  border-top-color: #30C29E;
+  border-left-color: #30C29E;
+  border-radius: 50%;
+
+  -webkit-animation: nprogress-spinner 400ms linear infinite;
+          animation: nprogress-spinner 400ms linear infinite;
+    margin-left:50%;
     display: none;
 
 }
@@ -423,5 +448,24 @@ li {
 	{
     		left:42%;
 	} 
+
+	.form-style-5 label {
+    display:inline-block;
+    *display: inline;     /* for IE7*/
+    zoom:1;              /* for IE7*/
+/*    float: left;*/
+    height: 40px;
+    padding-top: 5px;
+    text-align: center;
+}
 }
 ul li {-webkit-tap-highlight-color:rgba(0,0,0,.1);tap-highlight-color:rgba(0,0,0,.1)}
+
+#tytul_kalkulator {
+	padding:20px;
+}
+
+#response {
+	font-weight: 600;
+	font-size:18px;
+}

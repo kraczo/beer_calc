@@ -1,0 +1,33 @@
+
+ <script type="text/javascript" src="/public/js/script2.js"></script>
+ <div class="allForm">
+ <h1 id="tytul_kalkulator">Przelicznik ilości dodania cukru aby uzyskać zamierzony stopień nagazowania.</h1>
+
+<div class="form-style-5">
+<form id="form1" class="form-wrapper" method="post" >
+  <div id ="first">
+    <label for="number">Stopień nagazowania piwa</label><input step="0.01" class="required" type="number" name="stopienNagazowania" required data-parsley-type="number" size="100" />
+  </div>
+  <div>
+    <label for="number">Temperatura brzeczki</label>
+    <input id="number" class="required" type="number" name="temperaturaBrzeczki" required data-parsley-type="number" size="24" />
+  </div>
+  <div>
+    <label for="number">Ilość brzeczki</label>
+    <input id="number" class="required" type="number" name="iloscBrzeczki" required data-parsley-type="number" size="24" />
+  </div>
+  <div>
+    <label for="number">Rodzaj cukru</label>
+    <input id="number" class="required" type="number" name="rodzajCukru" required data-parsley-type="number" size="24" value="4.02" />
+  </div>
+  <div id="buttons">
+    <input type="submit" name="submit_1" value="Submit"  />
+    <input type="reset" name="reset" value="Reset" />
+  </div>
+  
+</form>
+</div>
+<div id="loader2"></div>
+<div id="response"></div>
+
+</div>
