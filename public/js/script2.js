@@ -1,5 +1,5 @@
+// ile dodac cukru i w jakiej ilosci wody rozrobic
 $(document).ready(function(){
-
     $('#form1').on('submit',function(e) {
 
           e.preventDefault();
@@ -18,9 +18,8 @@ $(document).ready(function(){
                 $('#response').show();
             },
             success: function(response) {
-                console.log('stopienNagazowania= ' + $('input[name="stopienNagazowania"]').val());
                 $('#response').empty();
-                $( "#response" ).append('-- Należy dodać <b> ' + JSON.stringify(response) + '</b> gram cukru --');
+                $("#response").append(response);
                 }
             });
 

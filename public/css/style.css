@@ -319,7 +319,7 @@ textarea.parsley-error {
 	height: 40px;
 	position: absolute;
 	top: -4px;
-	left: 20px;
+	left: 0px;
 }
 .header a.contacts
 {

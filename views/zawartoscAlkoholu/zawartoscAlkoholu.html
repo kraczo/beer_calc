@@ -28,7 +28,6 @@ $(document).ready(function(){
     $('#response').empty();
     var blgPoczatkowe = $("input[name=blgPoczatkowe]").val();
     var blgKoncowe = $("input[name=blgKoncowe]").val();
-    console.log(blgPoczatkowe + '  ' + blgKoncowe);
     var wynik = parseFloat((blgPoczatkowe - blgKoncowe)/1.938).toFixed(2);
     $( "#response" ).append('Zawartość alkoholu to ' + wynik + ' %');
 }

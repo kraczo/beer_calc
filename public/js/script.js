@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
     $('#form1').on('submit',function(e) {
 
     e.preventDefault();
@@ -18,7 +17,6 @@ $(document).ready(function(){
                 $('#response').show();
             },
             success: function(response) {
-                console.log($('input[name="iloscBrzeczki"]').val());
                 $('#response').empty();
                 $( "#response" ).append('--  Do ' + $('input[name="iloscBrzeczki"]').val() +'L brzeczki należy dolać ' + JSON.stringify(response) + 'L aby uzyskać gęstość '+ $('input[name="pozadanyStopienGestosci"]').val() +' blg  --');
                 }

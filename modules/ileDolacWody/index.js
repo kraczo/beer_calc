@@ -22,11 +22,8 @@ exports.register = function(server, options, next) {
 			method : 'POST',
 			path : '/ileDolacWody',
 			handler : function(request, reply) {
-				// let suma = 0;
 				let blg1_blg2 = request.payload.stopienGestosci - request.payload.pozadanyStopienGestosci;
-        		console.log(request.payload);
         		let wynik = parseFloat(request.payload.iloscBrzeczki * blg1_blg2 / request.payload.pozadanyStopienGestosci);
-        		console.log(wynik);
         		return reply(Math.round(wynik * 100)/100);
 			}
 		}

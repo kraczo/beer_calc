@@ -87,12 +87,19 @@
     <label for="number">Rodzaj cukru</label>
     <select name="rodzajCukru" style="height:42px; display:inline-block">
       <option value="3.82">Cukier trzcinowy
-      </option><option value="4.02">Cukier biały
+      </option><option selected="selected" value="4.02">Cukier biały
       </option><option value="6.8">Dried malt extract
       </option><option value="7.2">Northwestern
       </option><option value="9.3">Laaglander
       </option>
 </select>
+</div>
+<div>
+<label for="checkbox">Ilość wody do rozrobienia cukru</label><input type="checkbox" name="check" optional>
+  </div>
+<div id="podajBlg" style="display:none">
+    <label for="number">Początkowe BLG brzeczki</label>
+    <input id="number" class="optional" type="number" name="poczatkoweBlg" data-parsley-type="number" size="24" />
   </div>
   <div id="buttons">
     <input type="submit" name="submit_1" value="Submit"  />
@@ -106,6 +113,11 @@
 
 </div>
 <script>
+$('input[type="checkbox"]').click(function() {
+    $("#podajBlg").toggle(this.checked);
+
+});
+
 function displayVals(value) {
   $( "#stopienNagazowania" ).val(value);
 }
