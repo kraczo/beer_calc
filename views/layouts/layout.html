@@ -1,6 +1,4 @@
-
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -12,7 +10,12 @@
     <link type="text/css" rel="stylesheet" href="/public/css/jquery.mmenu.all.css?v=6" />
     <link type="text/css" rel="stylesheet" href="/public/css/jquery.mmenu.widescreen.css?v=6" media="all and (min-width: 650px)" />
     <link type="text/css" rel="stylesheet" href="/public/css/form.css" media="all and (min-width: 650px)" />
-    <style type="text/css">
+    <link type="text/css" rel='stylesheet' href='/public/css/nprogress.css'/>
+
+    <script type="text/javascript" src="/public/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/public/js/jquery.mmenu.all.min.js"></script>
+    <script type="text/javascript" src="/public/js/parsley.min.js"></script>
+       <style type="text/css">
       @media all and (min-width: 650px) {
         a[href="#menu"] {
           display: none;
@@ -22,30 +25,40 @@
         }
       }
     </style>
-
-    <script type="text/javascript" src="/public/js/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="/public/js/jquery.mmenu.all.min.js"></script>
-    <script type="text/javascript" src="/public/js/parsley.min.js"></script>
-    <!-- <script type="text/javascript" src="/public/js/script.js"></script> -->
-
     <script type="text/javascript">
+    // Hack - Back button (IE9)
+jQuery(function ($) {
+if ($('html').hasClass('ie9')) {
+$('.mm-header .mm-btn').on('click', function() {
+$('.mm-panel').removeClass('mm-current').removeClass('mm-opened');
+});
+}
+});
       $(function() {
         $("#menu")
           .mmenu({
-            extensions: ["widescreen","theme-dark"]
+            // "slidingSubmenus": false,
+            extensions: ["widescreen","theme-dark"],
+            navbar: {
+              title: "Kalkulator piwny"
+            }
+          },{
+            offCanvas: {
+              pageSelector: "content"
+            }
           });
       });
     </script>
 
     <script type="text/javascript" src="/public/js/nprogress.js"></script>
-    <link rel='stylesheet' href='/public/css/nprogress.css'/>
-
+    <script type="text/javascript" src="/public/js/beer_script.js"></script>
   </head>
   <body>
-    <div id="page">
+    <div id="page" style="margin-left:30%">
+<!--     <div id="page"> -->
       <div class="header">
         <a href="#menu"></a>
-        Strona główna
+        {{barTitle}}
       </div>
       <div id="loader"></div>
       <div class="content">
@@ -63,19 +76,19 @@
           <li><span>O mnie</span>
             <ul>
               <li><a href="#/about/history">Historia mojego warzenia</a></li>
-              <li><span>Nasz zespół</span>
+<!--               <li><span>Nasz zespół</span>
                 <ul>
                   <li><a href="#/about/team/management">Tylko Ja</a></li>
                   <li><a href="#/about/team/sales">Tylko Ja</a></li>
                   <li><a href="#/about/team/development">Tylko Ja</a></li>
                 </ul>
-              </li>
+              </li> -->
               <li><a href="#/about/address">Kontakt</a></li>
             </ul>
           </li>
-          <li><a href="/ileDolacWody">ileDolacWody</a></li>
-          <li><a href="/ileDodacCukru">ileDodacCukru</a></li>
-          <li><a href="#">Butelkowanie</a></li>
+          <li><a href="/ileDolacWody">Ile dolac wody do piwa</a></li>
+          <li><a href="/ileDodacCukru">Ile dodac cukru do refermentacji</a></li>
+          <li><a href="/zawartoscAlkoholu">Zawartosc alkoholu w gotowym piwie</a></li>
         </ul>
     </nav>
 

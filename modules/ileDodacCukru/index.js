@@ -15,7 +15,8 @@ exports.register = function(server, options, next) {
 				view: {
 				template:'ileDodacCukru/ileDodacCukru', 
 				context: {
-					title:'Ile dodac cukru aby uzyskac zamierzony stopien nagazowania'
+					title:'Ile dodac cukru aby uzyskac zamierzony stopien nagazowania',
+					barTitle:'Potrzebna ilość cukru do refermentacji'
 				}
 			}
 			}

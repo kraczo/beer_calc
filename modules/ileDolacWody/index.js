@@ -12,7 +12,10 @@ exports.register = function(server, options, next) {
 			method : 'GET',
 			path : '/ileDolacWody',
 			handler : function(request, reply) {
-				reply.view('ileDolacWody/ileDolacWody', {title:'ile dolac wody aby uzyskac zamierzony stopien gęstości'});
+				reply.view('ileDolacWody/ileDolacWody', {
+					title:'ile dolac wody aby uzyskac zamierzony stopien gęstości',
+					barTitle:'Ilość wody do planowanego BLG'
+				});
 			}
 		},
 		{

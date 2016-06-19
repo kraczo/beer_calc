@@ -1,16 +1,4 @@
-$(".header").html("<a href='#menu'></a>ile wody aby uzyskać zamierzone BLG");
 $(document).ready(function(){
-      $(".allForm").hide();
-      $("#loader").show();
-
-      $(".allForm").load("ileDolacWody.html", function () {
-        $("#loader").fadeOut('fast', function() {
-          $(".allForm").fadeIn('fast');
-        });
-      });
-
-    $('#form1').parsley();
-    $('#form1').on('reset',function(e) { $('#response').empty(); });
 
     $('#form1').on('submit',function(e) {
 

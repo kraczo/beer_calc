@@ -38,7 +38,8 @@ var plugins = [
     
     { register : require('vision') }, //register Vision with others Plugins
     { register : require('./modules/ileDolacWody/index.js') },
-    { register : require('./modules/ileDodacCukru/index.js') }
+    { register : require('./modules/ileDodacCukru/index.js') },
+    { register : require('./modules/zawartoscAlkoholu/index.js') }
 ];
 
 
@@ -64,23 +65,23 @@ server.register(plugins, function (err) {
      */
     server.route({ method: 'GET', path: '/', handler: function(request, reply) {
         
-        reply.view('home/home', {title : 'Home'});
+        reply.view('home/home', {title : 'Home',barTitle:'Kalkulator piwny wita !'});
         
     } });
 });
 
-server.ext('onPostHandler', function (request, reply) {
+// server.ext('onPostHandler', function (request, reply) {
 
-    const response = request.response;
-    if (response.isBoom &&
-        response.output.statusCode === 404) {
-        console.log(request.url.path);
-        return reply.file('404.html').code(404);
+//     const response = request.response;
+//     if (response.isBoom &&
+//         response.output.statusCode === 404) {
+//         console.log(request.url.path);
+//         return reply.file('404.html').code(404);
 
-    }
+//     }
 
-    return reply.continue();
-});
+//     return reply.continue();
+// });
 
 
 server.start((err) => {

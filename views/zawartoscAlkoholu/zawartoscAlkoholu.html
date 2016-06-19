@@ -1,0 +1,58 @@
+ <div class="allForm">
+ <h1 id="tytul_kalkulator">Obliczanie zawartości alkoholu w gotowym piwie</h1>
+
+<div class="form-style-5">
+<form id="form1" class="form-wrapper" method="post" >
+  <div id ="first">
+    <label for="number">BLG początkowe</label><input step="0.01" class="required" type="number" name="blgPoczatkowe" required data-parsley-type="number" size="100" />
+  </div>
+  <div>
+    <label for="number">BLG końcowe</label>
+    <input id="number" class="required" type="number" name="blgKoncowe" required data-parsley-type="number" size="24" />
+  </div>
+  <div id="buttons">
+    <input type="submit" name="submit_1" value="Submit"  />
+    <input type="reset" name="reset" value="Reset" />
+  </div>
+  
+</form>
+</div>
+<div id="loader2"></div>
+<div id="response"></div>
+
+</div>
+
+<script>
+$(document).ready(function(){
+  function ileAlk() {
+    $('#response').empty();
+    var blgPoczatkowe = $("input[name=blgPoczatkowe]").val();
+    var blgKoncowe = $("input[name=blgKoncowe]").val();
+    console.log(blgPoczatkowe + '  ' + blgKoncowe);
+    var wynik = parseFloat((blgPoczatkowe - blgKoncowe)/1.938).toFixed(2);
+    $( "#response" ).append('Zawartość alkoholu to ' + wynik + ' %');
+}
+
+    $('#form1').on('submit',function(e) {
+
+          e.preventDefault();
+    
+            $.ajax({
+                beforeSend: function() {
+                $('#response').hide();
+                $('#loader2').show();
+                $('#response').val('');
+            },
+            complete: function(){
+                $('#loader2').hide();
+                $('#response').show();
+            },
+            success: function() {
+                ileAlk();
+                }
+            });
+
+     });
+
+  });
+</script>
