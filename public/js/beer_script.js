@@ -14,4 +14,25 @@ $(document).ready(function(){
         });
   }
 });
+
+//mmenu
+
+//$('#mm-1').addClass('mm-subopened').removeClass('mm-current');
+//$('#mm-2').addClass('mm-current').removeClass('mm-opened');
+
+
+$('#menu a').each(function(){
+    var href = $(this).attr('href');
+
+    if ( window.location.href.indexOf(href) > 8 ){
+        $(this).parent('li').addClass('mm-selected');
+    }
+	
+
 });
+
+
+	
+});
+
+

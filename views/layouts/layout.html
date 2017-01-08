@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="author" content="www.frebsite.nl" />
     <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
-    <title>{{title}}</title>
+    <title>{{{title}}}</title>
 
     <link type="text/css" rel="stylesheet" href="/public/css/style.css" />
     <link type="text/css" rel="stylesheet" href="/public/css/jquery.mmenu.all.css?v=6" />
@@ -15,6 +15,14 @@
     <script type="text/javascript" src="/public/js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="/public/js/jquery.mmenu.all.min.js"></script>
     <script type="text/javascript" src="/public/js/parsley.min.js"></script>
+    <script type="text/javascript" src="/public/bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="/public/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="/public/controllers/controller.js"></script>
+
+
+        
+
+    </script>
        <style type="text/css">
       @media all and (min-width: 650px) {
         a[href="#menu"] {
@@ -25,6 +33,13 @@
         }
       }
     </style>
+  <!--[if IE ]>
+  <script type="text/javascript">
+  jQuery(function ($) {
+  alert('aaaaaa');
+  });
+  </script>
+<![endif]-->
     <script type="text/javascript">
     // Hack - Back button (IE9)
 jQuery(function ($) {
@@ -33,34 +48,103 @@ $('.mm-header .mm-btn').on('click', function() {
 $('.mm-panel').removeClass('mm-current').removeClass('mm-opened');
 });
 }
+
+console.log(window.location.href);
+console.log(window.location.href.indexOf("http://beer-calc.pl/kontakt"));
+if(window.location.href.indexOf("http://beer-calc.pl/kontakt") == 0)
+        {
+    console.log(window.location.href)
+             $("#menu li#kontakt").addClass("Selected");
+        }
+
+//if ( window.location.href == 'http://beer-calc.pl/zawartoscAlkoholu' ){
+//        $('#menu ul li:first-child').addClass('Selected');
+//   }
+/*$('#menu ul li').click(function() {
+alert('s');
+   $('#menu ul li').removeClass('Selected');
+    $('#menu ul li').addClass('Selected');
+});*/
 });
       $(function() {
         $("#menu")
           .mmenu({
-            // "slidingSubmenus": false,
-            extensions: ["widescreen","theme-dark"],
+             "slidingSubmenus": true,
+            extensions: ["widescreen","theme-dark"],          
+      counters  : true,
+      searchfield  : true,
             navbar: {
               title: "Kalkulator piwny"
-            }
-          }
-          // {
-          //   offCanvas: {
-          //     pageSelector: "content"
-          //   }
-          // }
-          );
+            },
+      navbars    : [
+        {
+          position  : 'top',
+          content    : [ 'searchfield' ]
+        }, {
+          position  : 'top',
+          content    : [
+            'prev',
+            'title'
+          ]
+        }, {
+          position  : 'bottom',
+          content    : [
+            '<b>Kalkulator</b>'
+          ]
+        }
+      ]
+          },{
+         // configuration
+         offCanvas: {
+            pageNodetype: "page"
+         }
+      });
       });
     </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-80280255-1', 'auto');
+  ga('send', 'pageview');
+
+      </script>
+
 
     <script type="text/javascript" src="/public/js/nprogress.js"></script>
     <script type="text/javascript" src="/public/js/beer_script.js"></script>
   </head>
-  <body>
+  <body ng-app="myApp">
 <!--     <div id="page" style="margin-left:30%"> -->
+    <nav id="menu">
+        <ul>
+          <li class="main"><a href="/">Strona główna</a></li>
+          <li><span>O mnie</span>
+            <ul>
+              <li><a href="#/about/history">Historia mojego warzenia</a></li>
+<!--               <li><span>Nasz zespół</span>
+                <ul>
+                  <li><a href="#/about/team/management">Tylko Ja</a></li>
+                  <li><a href="#/about/team/sales">Tylko Ja</a></li>
+                  <li><a href="#/about/team/development">Tylko Ja</a></li>
+                </ul>
+              </li> -->
+              <li id="kontakt"><a href="/kontakt">Kontakt</a></li>
+            </ul>
+          </li>
+          <li><a href="/ileDolacWody">Ile dolac wody/cukru do piwa</a></li>
+          <li><a href="/ileDodacCukru">Ile dodac cukru do refermentacji</a></li>
+          <li><a href="/obliczIBU">Obliczanie IBU</a></li>
+          <li id="zawartosc"><a href="/zawartoscAlkoholu">Zawartosc alkoholu w gotowym piwie</a></li>
+        </ul>
+    </nav>
     <div id="page">
+    <!-- <div id="page"> -->
       <div class="header">
         <a href="#menu"></a>
-        {{barTitle}}
+        {{{barTitle}}}
       </div>
       <div id="loader"></div>
       <div class="content">
@@ -72,27 +156,6 @@ $('.mm-panel').removeClass('mm-current').removeClass('mm-opened');
     </script>
       {{{content}}}         
     </div>
-    <nav id="menu">
-        <ul>
-          <li><a href="/">Strona główna</a></li>
-          <li><span>O mnie</span>
-            <ul>
-              <li><a href="#/about/history">Historia mojego warzenia</a></li>
-<!--               <li><span>Nasz zespół</span>
-                <ul>
-                  <li><a href="#/about/team/management">Tylko Ja</a></li>
-                  <li><a href="#/about/team/sales">Tylko Ja</a></li>
-                  <li><a href="#/about/team/development">Tylko Ja</a></li>
-                </ul>
-              </li> -->
-              <li><a href="#/about/address">Kontakt</a></li>
-            </ul>
-          </li>
-          <li><a href="/ileDolacWody">Ile dolac wody do piwa</a></li>
-          <li><a href="/ileDodacCukru">Ile dodac cukru do refermentacji</a></li>
-          <li><a href="/zawartoscAlkoholu">Zawartosc alkoholu w gotowym piwie</a></li>
-        </ul>
-    </nav>
-
+  </div>
   </body>
 </html>

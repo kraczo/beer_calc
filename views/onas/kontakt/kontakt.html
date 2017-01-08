@@ -1,0 +1,63 @@
+<div class="allForm">
+ <h1 id="napisz_do_nas">Zapytaj, podziel się czymś, wyraź opinię lub cookolwiek innego.</h1>
+
+<div class="form-style-5" ng-controller="ContactCtrl">
+<form parsley-validate id="form1" name="form1" class="form-wrapper" method="post" ng-submit="form1.$valid && submit(form1)" novalidate>
+  <div id ="first">
+    <label for="string">Imie</label><input type="string" class="required" required name="imie" size="24" ng-model="ContactCtrl.contactName" />
+    <span class="help-block" ng-show="ContactCtrl.errorName"></span> 
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input style="width:200px" id="email" name="email" type="email" class="required" required  data-parsley-type="email" size="10" ng-model="ContactCtrl.contactEmail"/>
+  </div>
+  <div>
+    <label for="string">Temat</label>
+    <input  name="temat" size="24" data-ng-model="ContactCtrl.contactSubject"/>
+  </div>
+  <div>
+    <label for="string">Treść wiadomośći</label>
+    <input  type="string" name="tresc" class="required" required size="24" ng-model="ContactCtrl.contactMessage" />
+  </div>
+  <div id="buttons">
+    <input type="submit" name="submit_1" value="Submit" ng-disabled="isValid"/>
+    <input type="reset" name="reset" value="Reset" />
+  </div>
+</form>
+</div>
+<div id="loader2"></div>
+<div id="response"></div>
+
+</div>
+
+<!-- <div class="allForm">
+ <h1 id="napisz_do_nas">Zapytaj, podziel się czymś, wyraź opinię lub cookolwiek innego.</h1>
+
+<div class="form-style-5" data-ng-controller="ContactCtrl as cf">
+<form id="form1" class="form-wrapper" method="post" data-ng-submit="sendMail(cf)" >
+  <div id ="first">
+    <label for="string">Imie</label><input optional name="imie" size="24" data-ng-model="cf.contactName" />
+  </div>
+  <div>
+    <label for="string">Email</label>
+    <input class="required" name="email" required data-parsley-type="email" size="24" data-ng-model="cf.contactEmail"/>
+  </div>
+  <div>
+    <label for="string">Temat</label>
+    <input  name="temat" size="24" data-ng-model="cf.contactSubject"/>
+  </div>
+  <div>
+    <label for="string">Treść wiadomośći</label>
+    <input class="required" type="string" name="tresc" required  size="24" data-ng-model="cf.contactMessage" />
+  </div>
+  <div id="buttons">
+    <input type="submit" name="submit_1" value="Submit" />
+    <input type="reset" name="reset" value="Reset" />
+  </div>
+  
+</form>
+</div>
+<div id="loader2"></div>
+<div id="response"></div>
+
+</div> -->

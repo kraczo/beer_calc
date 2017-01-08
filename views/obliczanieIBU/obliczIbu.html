@@ -1,0 +1,41 @@
+ <div class="allForm">
+ <h1 id="tytul_kalkulator">Przelicznik IBU podczas gotowania</h1>
+
+<div class="form-style-5" ng-controller="ibuController">
+<form  id="form1" name="form1" class="form-wrapper" method="post" ng-submit="form1.$valid && submit(form1)" novalidate>
+  <div id ="first">
+    <label for="iloscBrzeczki">Ilość brzeczki</label>
+    <input required  id="iloscBrzeczki"type="number" value="{18.93}" size="24" ng-init="ibuController.iloscBrzeczki=18.93" ng-model="ibuController.iloscBrzeczki"/>
+<!--      <span class="help-block" ng-show="ibuController.errorName"></span>  -->
+  </div>
+  <div>
+    <label for="czasGotowania">Czas gotowania</label>
+    <input required id="czasGotowania" type="number" value="{60}" size="24" ng-init="ibuController.czasGotowania=60" ng-model="ibuController.czasGotowania"/>
+  </div>
+  <div>
+    <label for="gestoscBrzeczki">Gęstość Brzeczki</label>
+    <input required id="gestoscBrzeczki" type="number" value="{12.38}" size="24" ng-init="ibuController.gestoscBrzeczki=12.38" ng-model="ibuController.gestoscBrzeczki" />
+    </div>
+  <div>
+    <label for="nazwaChmielu">Nazwa chmielu</label>
+    <input required id="nazwaChmielu" type="string" value="Marynka" size="24"/>
+  </div>`
+  <div>
+    <label for="alfakwasy">% Alfakwsów</label>
+    <input required id="alfakwasy" type="number" value="{10}" size="24" ng-init="ibuController.alfakwasy=10" ng-model="ibuController.alfakwasy"/>
+  </div>
+  <div>
+    <label for="iloscChmielu">Ilość chmielu w g</label>
+    <input required id="iloscChmielu" type="number" value="{28.3}" size="24" ng-init="ibuController.iloscChmielu=28.3" ng-model="ibuController.iloscChmielu"/>
+  </div>
+  <div id="buttons">
+    <input type="submit" name="submit_1" value="Submit"/>
+    <input type="reset" name="reset" value="Reset" />
+  </div>
+</form>
+</div>
+<div id="loader2"></div>
+<div id="response"></div>
+
+</div>
+

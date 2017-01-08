@@ -18,7 +18,11 @@ $(document).ready(function(){
             },
             success: function(response) {
                 $('#response').empty();
-                $( "#response" ).append('--  Do ' + $('input[name="iloscBrzeczki"]').val() +'L brzeczki należy dolać ' + JSON.stringify(response) + 'L aby uzyskać gęstość '+ $('input[name="pozadanyStopienGestosci"]').val() +' blg  --');
+                if($('input[name="stopienGestosci"]').val() > $('input[name="pozadanyStopienGestosci"]').val())
+                $( "#response" ).append('--  Do ' + $('input[name="iloscBrzeczki"]').val() +'L brzeczki należy dolać <span style="font-size:20px;">' + JSON.stringify(response) + ' L wody </span> aby uzyskać gęstość '+ $('input[name="pozadanyStopienGestosci"]').val() +' blg  --');
+                else if ($('input[name="stopienGestosci"]').val() < $('input[name="pozadanyStopienGestosci"]').val())
+                $( "#response" ).append('--  Do ' + $('input[name="iloscBrzeczki"]').val() +'L </span>brzeczki należy dodać <span style="font-size:20px;">' + JSON.stringify(response) + ' KG cukru </span> aby uzyskać gęstość '+ $('input[name="pozadanyStopienGestosci"]').val() +' blg  --');
+                else $( "#response" ).append('Stopień gęstośći brzeczki nie może być taki sam jak stopień pożądanej gęstości');;
                 }
             });
 

@@ -1,0 +1,30 @@
+{
+  "name": "beer-calc",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Kraczo"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "kalkulator",
+    "piwny",
+    "obliczenia",
+    "przy",
+    "warzeniu",
+    "piwa"
+  ],
+  "homepage": "https://github.com/kraczo/beer_calc",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "^0.3.2",
+    "angular": "^1.5.9"
+  }
+}
