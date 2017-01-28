@@ -151,3 +151,22 @@ textarea.parsley-error {
   opacity: 1;
 }
 
+#alfakwasy {
+  width:40px; float:left;
+      text-align: center;
+}
+
+#czasGotowania, #iloscChmielu {
+  width:60px; float:left;    text-align: center;
+}
+.form-style-5 fieldset div {
+  margin-top:20px;
+  padding:0px 6px 0px 6px ;
+}
+
+.form-style-5 fieldset label {
+  width:130px;
+}
+#brew_styles {
+  width:auto; text-align: center;
+}

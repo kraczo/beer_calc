@@ -3,13 +3,13 @@ myApp.config(function($interpolateProvider){
     $interpolateProvider.startSymbol('{').endSymbol('}');
 });
 
-myApp.controller('ibuController',['$scope','$element','$rootScope','$document','$http', function($scope,$element,$rootScope,$document, $http) {
+myApp.controller('ContactCtrl',['$scope','$element','$rootScope','$document','$http', function($scope,$element,$rootScope,$document, $http) {
 
  	$scope.isValid = false;
 	$scope.submit = function(form){ // angular will do whatever you say in here. // default form action prevented. }
         $('#loader2').show();
 		$scope.isValid = true;
-		$http.post('/contactForm', $scope.ibuController).then(doneCallbacks, failCallbacks);
+		$http.post('/contactForm', $scope.ContactCtrl).then(doneCallbacks, failCallbacks);
 
 		function doneCallbacks(res) {
 		   $('#response').empty();
@@ -26,15 +26,59 @@ myApp.controller('ibuController',['$scope','$element','$rootScope','$document','
 
 myApp.controller('ibuController',['$scope','$element','$rootScope','$document','$http', function($scope,$element,$rootScope,$document, $http) {
 console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
-	$http.get('/obliczIBU', function (data){
-		$scope.czasGotowania = data;
-	});
+
+// $scope.choices = [{id: 'choice1'}, {id: 'choice2'}];
+  
+//   $scope.addNewChoice = function() {
+//     var newItemNo = $scope.choices.length+1;
+//     $scope.choices.push({'id':'choice'+newItemNo});
+//   };
+    
+//   $scope.removeChoice = function() {
+//     var lastItem = $scope.choices.length-1;
+//     $scope.choices.splice(lastItem);
+//   };
+
+$scope.choices = [{id: 'chmielu 1'}];
+  var showRemove = true;
+  $scope.addNewChoice = function() {
+    var newItemNo = $scope.choices.length+1;
+    $scope.choices.push({'id':'chmielu '+ newItemNo});
+    showRemove = false;
+  };
+    
+  $scope.removeChoice = function() {
+    var lastItem = $scope.choices.length-1;
+    $scope.choices.splice(lastItem);
+  };
+  $scope.hideRetry = function () {
+    if(showRemove) $( ".remove" ).hide();
+}
+
+	// $http.get('/obliczIBU', function (data){
+	// 	$scope.czasGotowania = data;
+	// });
+
+	// var data = {
+ //        choices: $scope.choices,
+ //        ibuController: $scope.ibuController
+ //    };
+
  	$scope.isValid = false;
 	$scope.submit = function(form){ // angular will do whatever you say in here. // default form action prevented. }
-        $('#loader2').show();
-		$scope.isValid = true;
-		$http.post('/obliczamyIBU', $scope.ibuController).then(doneCallbacks, failCallbacks);
 
+        $('#loader2').show();
+
+		$scope.isValid = true;
+
+var data = {
+        choices: $scope.choices,
+        ibuController: $scope.ibuController
+    };
+
+		$http.post('/obliczamyIBU', data).then(doneCallbacks, failCallbacks);
+ // console.log($scope.choices);
+ // console.log($scope.ibuController);
 		function doneCallbacks(res) {
 		   $('#response').empty();
 		   $('#loader2').hide();
