@@ -13,7 +13,7 @@ exports.register = function(server, options, next) {
       path : '/ileDolacWody',
       handler : function(request, reply) {
         reply.view('ileDolacWody/ileDolacWody', {
-          title:'ile wody dolać do piwa aby uzyskac zamierzony stopien gęstości',
+          title:'Kalkulator dodatku wody, cukru do piwa, brzeczki piwnej.',
           barTitle:'Ilość wody do planowanego BLG'
         });
       }

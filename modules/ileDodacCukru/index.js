@@ -15,8 +15,8 @@ exports.register = function(server, options, next) {
 				view: {
 				template:'ileDodacCukru/ileDodacCukru', 
 				context: {
-					title:'Ile dodac cukru do piwa aby uzyskac zamierzony stopien nagazowania',
-					barTitle:'Potrzebna ilość cukru do refermentacji'
+					title:'Kalkulator nagazowania piwa podczas refermentacji.',
+					barTitle:'Oblicz potrzebną ilość cukru do refermentacji'
 				}
 			}
 			}

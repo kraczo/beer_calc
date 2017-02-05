@@ -5,15 +5,24 @@
 //    $( "#alfakwasy" ).val(value);
 // }
 // });
+function parseToInt(value){
+  console.log(value)
+  return parseInt(value);
+}
+function checkInput(textbox) {
+ var textInput = $( "#alfakwasy" ).val(value);
+
+ alert(textInput); 
+}
 </script>
 
  <div class="allForm">
- <h1 id="tytul_kalkulator">Przelicznik IBU podczas gotowania</h1>
+ <h1 id="tytul_kalkulator">Kalkulator wskaźnika IBU, przelicznik IBU podczas gotowania</h1>
 
 <div class="form-style-5" ng-controller="ibuController">
 <form  id="form1" name="form1" class="form-wrapper" method="post" ng-submit="form1.$valid && submit(form1)" novalidate>
   <div id ="first">
-    <label for="iloscBrzeczki">Ilość brzeczki</label>
+    <label for="iloscBrzeczki">Ilość brzeczki w (L)</label>
 <!--     <input required  id="iloscBrzeczki"type="number" value="{18.93}" size="24" ng-init="ibuController.iloscBrzeczki=18.93" ng-model="ibuController.iloscBrzeczki"/> -->
     <input required  id="iloscBrzeczki"type="number" size="24" ng-model="ibuController.iloscBrzeczki"/>
 <!--      <span class="help-block" ng-show="ibuController.errorName"></span>  -->
@@ -23,104 +32,43 @@
     <input required id="czasGotowania" type="number" value="{60}" size="24" ng-init="ibuController.czasGotowania=60" ng-model="ibuController.czasGotowania"/>
   </div> -->
   <div>
-    <label for="gestoscBrzeczki">Gęstość Brzeczki</label>
+    <label for="gestoscBrzeczki">Gęstość Brzeczki (Plato)</label>
 <!--     <input required id="gestoscBrzeczki" type="number" value="{12.38}" size="24" ng-init="ibuController.gestoscBrzeczki=12.38" ng-model="ibuController.gestoscBrzeczki" /> -->
     <input required id="gestoscBrzeczki" type="number" size="24" ng-model="ibuController.gestoscBrzeczki" />
     </div>
     <fieldset  data-ng-repeat="choice in choices">
-<hr/>
+    <hr/>
        <!-- { choice } -->
 <!-- end start and remove -->
   <div style="width:0px; padding-left:80px">
     <label style="padding:8px 10px 0px 0px;" for="nazwaChmielu">Nazwa {choice.id}</label>
     <!-- <select onchange="displayVals(this.value)" id="brew_styles" style="height:42px; display:inline-block"> -->
-    <select id="brew_styles" style="height:42px; display:inline-block">
-      <option value="4.4">Ahtanum: 4-6.3%
-      </option><option value="8.5">Amarillo: 8-9%
-      </option><option value="17">Apollo: 15-19%
-      </option><option value="15">Azacca: 14-16%
-      </option><option value="8.5">Boadicea: 8-9%i790-u
-      </option><option value="16">Bravo: 14-17%
-      </option><option value="6" selected="selected">Cascade (U.S.): 4.5-7%
-      </option><option value="7">Cascade (New Zealand): 6-8%
-      </option><option value="8.6">Cashmere: 7.7-9.1%
-      </option><option value="11">Centennial: 8-11.5%
-      </option><option value="12">Chinook: 10-14%
-      </option><option value="12">Citra: 11-13%
-      </option><option value="7.2">Cluster: 5.5-8.5%
-      </option><option value="14">Columbus: 11-16%
-      </option><option value="10">Comet: 9-11%
-      </option><option value="1.9">El Dorado: 14-16%
-      </option><option value="18">Eureka: 17-19%
-      </option><option value="14">Galaxy: 11-16%
-      </option><option value="12">Galena:  10-14%
-      </option><option value="8">Glacier: 5-9%
-      </option><option value="13">Horizon: 11-14%
-      </option><option value="13.5">Idaho: 12-15%
-      </option><option value="16">Jarrylo: 15-17%
-      </option><option value="3">CKohatu: 3%
-      </option><option value="6">Lemondrop: 5-7%
-      </option><option value="14">Magnum (German): 12-16%
-      </option><option value="12">Magnum (U.S.): 10-14%
-      </option><option value="13">Nelson Sauvin: 12-14%
-      </option><option value="14.4">Newport: 13-17%
-      </option><option value="8">Northern Brewer (German): 7-10%
-      </option><option value="8">Northern Brewer (U.S.): 6-10%
-      </option><option value="4.5">Northwest Golding: 4-5%
-      </option><option value="13">Nugget: 11-14.5%
-      </option><option value="12">Olympic: 11-13%
-      </option><option value="6.6">Opal: 5-8%
-      </option><option value="14">Pacific Gem: 13-15%
-      </option><option value="13">Pacific Jade: 12-14%
-      </option><option value="8">Palisade: 5.5-9.5%
-      </option><option value="14.5">Pekko: 13-16%
-      </option><option value="8">Perle: 6-9.5%
-      </option><option value="11">Pilgrim: 9-13%
-      </option><option value="9">Pride of Ringwood: 7-10%
-      </option><option value="9">Rakau: 9-11%
-      </option><option value="8.5">Riwaka: 4.5-6.5%
-      </option><option value="7">Santiam: 5-7.9%
-      </option><option value="13">Satus: 12.5-14%
-      </option><option value="13">Simcoe: 12-14%
-      </option><option value="14.5">Sorachi Ace: 13-16%
-      </option><option value="5.6">Sovereign: 5-6%
-      </option><option value="8.6">Styrian Aurora: 7-9.5%
-      </option><option value="6">Summer: 5.6-6.4%
-      </option><option value="17">Summit: 16-18%
-      </option><option value="11">Super Alpha: 10-12%
-      </option><option value="14">Super Pride : 14%
-      </option><option value="12">Target : 9.5-12.5%
-      </option><option value="16">Tomahawk: 15-17%
-      </option><option value="14.7">Topaz: 13.7-17.7%
-      </option><option value="16">Vic Secret: 14-17%
-      </option><option value="3.4">Wai-iti: 3.4%
-      </option><option value="18">Waimea: 16-19%
-      </option><option value="16">Warrior: 15-17%
-      </option><option value="5.3">Willamette: 3.5-6%
-      </option><option value="8">Yakima Cluster: 6-8.5%
-      </option><option value="16">Zeus: 13-17%
-      </option>
+    <select id="brew_styles" ng-model="option" ng-init="option" style="height:42px; display:inline-block" data-ng-change="form1.$valid && submit(form1)" ng-options="option.value as option.name for option in options" >
 </select>
   </div>
   <div>
     <label for="alfakwasy">% Alfakwsów</label><p></p>
-<!--     <input required id="alfakwasy" type="number" value="6" size="24" ng-init="choice.alfakwasy=6" ng-model="choice.alfakwasy"/> -->
-    <input required id="alfakwasy" type="number" value="6" size="24" ng-model="choice.alfakwasy"/>
+<!--     <input required id="alfakwasy" type="number" value="6" size="24" ng-init="choice.alfakwasy=6" ng-model="choice.alfakwasy"/> value="{option}"-->
+    <input required id="alfakwasy" type="number" size="24" ng-model="choice.alfakwasy" data-ng-change="form1.$valid && submit(form1)"/>
   </div>
   <div>
     <label for="iloscChmielu">Ilość chmielu w g</label><p></p>
-    <input required id="iloscChmielu" type="number" size="24" ng-model="choice.iloscChmielu"/>
+    <input required id="iloscChmielu" type="number" size="24" ng-model="choice.iloscChmielu" data-ng-change="form1.$valid && submit(form1)"/>
   </div>
   <div>
     <label for="czasGotowania">Czas gotowania</label><p></p>
-    <input required id="czasGotowania" type="number" size="24" ng-model="choice.czasGotowania"/>
+    <input required id="czasGotowania" type="number" size="24" ng-model="choice.czasGotowania" data-ng-change="form1.$valid && submit(form1)"/>
   </div>
+  <b><div id='ibuSinge{choice.ibuSingeHop}' ng-model="choice.ibuSingeHop"></div></b>
+
 <!-- start add and remve -->
-  <div style="margin-top:80px">
+<!--   <div id="buttons" style="margin-top:40px"> -->
     <input type="button" class="remove" ng-show="$last" ng-hide="hideRetry()" value="Usuń chmiel" ng-click="removeChoice()"/>
 
    <input type="button" class="addfields" value="Dodaj kolejny chmiel" ng-click="addNewChoice()"/>
-    </div>
+<!--     </div> -->
+<!--     <div id='ibuSinge{choice.ibuSingeHop}' ng-model="choice.ibuSingeHop"></div> -->
+
    </fieldset>
  
   <div id="buttons">

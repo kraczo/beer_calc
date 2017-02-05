@@ -13,7 +13,7 @@ exports.register = function(server, options, next) {
 			path : '/zawartoscAlkoholu',
 			handler : function(request, reply) {
 				reply.view('zawartoscAlkoholu/zawartoscAlkoholu', {
-					title:'Obliczanie zawartości alkoholu w gotowym piwie',
+					title:'Kalkulator obliczania zawartości alkoholu w gotowym piwie',
 					barTitle:'Zawartość alkoholu w piwie'
 				});
 			}

@@ -170,3 +170,10 @@ textarea.parsley-error {
 #brew_styles {
   width:auto; text-align: center;
 }
+
+input.remove, input.addfields {
+  margin-top: 20px;
+}
+.singleHop {
+  margin-top: 60px;
+}
