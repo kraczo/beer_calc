@@ -11,7 +11,6 @@ function parseToInt(value){
 }
 function checkInput(textbox) {
  var textInput = $( "#alfakwasy" ).val(value);
-
  alert(textInput); 
 }
 </script>
@@ -40,10 +39,10 @@ function checkInput(textbox) {
     <hr/>
        <!-- { choice } -->
 <!-- end start and remove -->
-  <div style="width:0px; padding-left:80px">
+  <div>
     <label style="padding:8px 10px 0px 0px;" for="nazwaChmielu">Nazwa {choice.id}</label>
     <!-- <select onchange="displayVals(this.value)" id="brew_styles" style="height:42px; display:inline-block"> -->
-    <select id="brew_styles" ng-model="option" ng-init="option" style="height:42px; display:inline-block" data-ng-change="form1.$valid && submit(form1)" ng-options="option.value as option.name for option in options" >
+    <select ng-model="option" ng-init="option" style="height:42px; display:inline-block;" data-ng-change="form1.$valid && submit(form1)" ng-options="option.value as option.name for option in options" >
 </select>
   </div>
   <div>
@@ -59,7 +58,7 @@ function checkInput(textbox) {
     <label for="czasGotowania">Czas gotowania</label><p></p>
     <input required id="czasGotowania" type="number" size="24" ng-model="choice.czasGotowania" data-ng-change="form1.$valid && submit(form1)"/>
   </div>
-  <b><div id='ibuSinge{choice.ibuSingeHop}' ng-model="choice.ibuSingeHop"></div></b>
+  </br><b><div class="ibuSingle" id='ibuSinge{choice.ibuSingeHop}' ng-model="choice.ibuSingeHop"></div></b>
 
 <!-- start add and remve -->
 <!--   <div id="buttons" style="margin-top:40px"> -->
@@ -82,3 +81,4 @@ function checkInput(textbox) {
 
 </div>
 
+<div id="disqus_thread"></div>

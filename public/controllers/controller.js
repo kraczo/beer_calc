@@ -78,7 +78,6 @@ console.log($scope.choices)
 			if (!newItemNo) newItemNo = 1;
 			for (var i = 0; i < newItemNo; i++) {
 				$('#ibuSingehop' + i).html(res.data.ibuSingleHop[i] + ' ibu').css({
-					"margin": "80px 0px 0px 400px",
 					"font-size": "20px"
 				});
 			}

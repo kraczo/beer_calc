@@ -58,7 +58,7 @@ margin-top: 0px;
     color: #555;
     font: 95% Arial, Helvetica, sans-serif;
 /*    display: inline-block;*/
-    width: 300px;
+    width: 200px;
 }
 
 .form-style-5 input[type="text"]:focus,
@@ -151,12 +151,8 @@ textarea.parsley-error {
   opacity: 1;
 }
 
-#alfakwasy {
-  width:40px; float:left;
-      text-align: center;
-}
-
-#czasGotowania, #iloscChmielu {
+/*
+#alfakwasy, #czasGotowania, #iloscChmielu {
   width:60px; float:left;    text-align: center;
 }
 .form-style-5 fieldset div {
@@ -176,4 +172,4 @@ input.remove, input.addfields {
 }
 .singleHop {
   margin-top: 60px;
-}
+}*/

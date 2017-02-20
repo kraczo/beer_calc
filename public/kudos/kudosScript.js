@@ -1,15 +1,3 @@
-    <div style="width:80%; margin:40px auto 0px" id="trescHome">
-        <p><strong>Witam na stronie kalkulatora piwowarskiego</strong><br />
-          Kalkulator bedzie rozbudowywany o nowe funcje. Wersja 1.2.<p>
-		  </p>Masz pomysł na rozbudowanie kalkulatora, chciałbyś dodać nowe kalkulatory ?
-		  Odezwij się a na pewno wdrożymy razem zmianę i pod kalkulatorem dodam informacje ze jesteś autorem danego wpisu lub funkcjonalności.
-		  <p></p><b>kraczo@gmail.com</b>, formularz na stronie lub po prostu komentarz.
-		  <p>Pozdrawiam</p>
-      </div>
-      <!-- comments -->
-        <div id="disqus_thread"></div>
-        <!-- end comments -->
-<!--           <script type="text/javascript">
           $.ajax({
                 type: "POST",
                 url: '/kudos',
@@ -72,7 +60,7 @@
           // console.log("Kodo'd:", element.data('id'), ":)");
 
           // set cookie so user cannot kudo again for 7 days
-          // $.cookie(postId, 'true', { expires: 7 });
+          $.cookie(postId, 'true', { expires: 2 });
         });
 
         // after removing a kudo
@@ -96,38 +84,3 @@
           $.removeCookie(postId);
         });
       });
-    </script> -->
-
-<!--     <figure class="kudo kudoable" data-id="1">
-      <a class="kudobject">
-        <div class="opening"><div class="circle">&nbsp;</div></div>
-      </a>
-      <a href="#kudo" class="count">
-        <span class="num"></span>
-        <span class="txt">Kudos</span>
-      </a>
-    </figure> -->
-<!-- operacje na bazie danych cwiczenia
-          {{list.person1.name}}</p> -->
-<!--           <div id="angularTest">
-                    <input ng-model="test">{test}
-          </div>
- -->
-<!--           <div ng-controller="AppCtrl">
-          
-          name<input name="name" ng-model="contact.name">
-          email<input ng-model="contact.email">
-          <button ng-click="addContact()">addContact</button>
-          <button ng-click="update()">Update</button>
-          <button ng-click="deselect()">Clear</button>
-
-		          <div ng-repeat="contact in list">
-		          <p>{contact.name}</p>
-		          <p>{contact.email}</p><button ng-click="remove(contact._id)">Wywal</button><button ng-click="edit(contact._id)">Edytuj</button>
-
-		          </div>
-		  </div> -->
-      </div>
-
-
-

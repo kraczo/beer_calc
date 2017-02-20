@@ -18,8 +18,18 @@
     <script type="text/javascript" src="/public/bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="/public/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script type="text/javascript" src="/public/controllers/controller.js"></script>
+    <!-- kudos -->
+    <script type="text/javascript" src="/public/kudos/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/public/kudos/kudos.js"></script>
+    <script type="text/javascript" src="/public/kudos/kudosScript.js"></script>
+    <link href="/public/kudos/kudos.css" media="screen" rel="stylesheet" type="text/css" />
 
+    <!-- end kudos -->
 
+    <!-- comments -->
+    <script type="text/javascript" src="/public/disqus/disqus.js"></script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <!-- end comments -->
         
 
     </script>
@@ -41,6 +51,7 @@
   </script>
 <![endif]-->
     <script type="text/javascript">
+
     // Hack - Back button (IE9)
 jQuery(function ($) {
 if ($('html').hasClass('ie9')) {
@@ -112,12 +123,45 @@ alert('s');
 
       </script>
 
+<!-- fb -->
+<script>
+$(document).ready(function()
+{
+    var slider_width = $('.pollSlider').width();//get width automaticly
+  $('#pollSlider-button').click(function() {
+    if($(this).css("margin-right") == slider_width+"px" && !$(this).is(':animated'))
+    {
+        $('.pollSlider,#pollSlider-button').animate({"margin-right": '-='+slider_width},'slow','easeOutBounce');
+    }
+    else
+    {
+        if(!$(this).is(':animated'))//perevent double click to double margin
+        {
+            $('.pollSlider,#pollSlider-button').animate({"margin-right": '+='+slider_width},'slow','easeInQuart');
+        }
+    }
+
+
+  });
+ });     
+</script>
+<!-- end fb -->
 
     <script type="text/javascript" src="/public/js/nprogress.js"></script>
     <script type="text/javascript" src="/public/js/beer_script.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
   </head>
   <body ng-app="myApp">
-<!--     <div id="page" style="margin-left:30%"> -->
+
+        <!-- fanpage box -->
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
     <nav id="menu">
         <ul>
           <li class="main"><a href="/">Strona główna</a></li>
@@ -148,13 +192,24 @@ alert('s');
       </div>
       <div id="loader"></div>
       <div class="content">
+      <div class="pollSlider"><div class="fb-page" data-href="https://www.facebook.com/beercalc" data-tabs="timeline" data-width="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/beercalc" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/beercalc">Beer-calc, kalkulator piwny</a></blockquote></div></div>
+      <div id="pollSlider-button"></div>
               <script type="text/javascript">
               NProgress.configure({ minimum: 0.1 });
     NProgress.start();
     setTimeout(function() { NProgress.done(); $('.fade').removeClass('out'); }, 1000);
 
     </script>
-      {{{content}}}         
+      {{{content}}}   
+    <figure class="kudo kudoable" data-id="1">
+        <a class="kudobject">
+          <div class="opening"><div class="circle">&nbsp;</div></div>
+        </a>
+        <a href="#kudo" class="count">
+          <span class="num"></span>
+          <span class="txt">No to zdrówko</span>
+        </a>
+    </figure>      
     </div>
   </div>
   </body>
