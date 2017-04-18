@@ -46,16 +46,16 @@ function checkInput(textbox) {
 </select>
   </div>
   <div>
-    <label for="alfakwasy">% Alfakwsów</label><p></p>
+    <label for="alfakwasy" id="alfakwasyLabel">% Alfakwsów</label><p></p>
 <!--     <input required id="alfakwasy" type="number" value="6" size="24" ng-init="choice.alfakwasy=6" ng-model="choice.alfakwasy"/> value="{option}"-->
     <input required id="alfakwasy" type="number" size="24" ng-model="choice.alfakwasy" data-ng-change="form1.$valid && submit(form1)"/>
   </div>
   <div>
-    <label for="iloscChmielu">Ilość chmielu w g</label><p></p>
+    <label for="iloscChmielu" id="iloscChmieluLabel">Ilość chmielu w g</label><p></p>
     <input required id="iloscChmielu" type="number" size="24" ng-model="choice.iloscChmielu" data-ng-change="form1.$valid && submit(form1)"/>
   </div>
   <div>
-    <label for="czasGotowania">Czas gotowania</label><p></p>
+    <label for="czasGotowania" id="czasGotowaniaLabel">Czas gotowania</label><p></p>
     <input required id="czasGotowania" type="number" size="24" ng-model="choice.czasGotowania" data-ng-change="form1.$valid && submit(form1)"/>
   </div>
   </br><b><div class="ibuSingle" id='ibuSinge{choice.ibuSingeHop}' ng-model="choice.ibuSingeHop"></div></b>

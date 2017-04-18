@@ -343,6 +343,15 @@ input.remove, input.addfields {
 /*
 ** 6 - Responsive
 */
+/* 6.2 Max Width: 1024px */
+@media only screen and (max-width: 1024px) {
+  #alfakwasy, #czasGotowania, #iloscChmielu {
+  width:20px; float:left;    text-align: center;
+}
+
+}
+
+
 @media only screen and (max-width: 850px) {
   #alfakwasy, #czasGotowania, #iloscChmielu {
   width:200px; float:none;    text-align: center;
@@ -352,8 +361,8 @@ input.remove, input.addfields {
 }
 
 .pollSlider{
-    width:200px;
-    margin-right: -200px;
+    width:300px;
+    margin-right: -300px;
 }
 #pollSlider-button{
     width:50px;

@@ -1,5 +1,5 @@
 .form-style-5{
-    max-width: 600px;
+    max-width: 700px;
     padding: 10px 20px;
     background: #f4f7f8;
     margin: 10px auto;
@@ -19,10 +19,11 @@
     display:inline-block;
     *display: inline;     /* for IE7*/
     zoom:1;              /* for IE7*/
-    float: left;
+    /*float: left;*/
     padding-top: 5px;
     text-align: center;
     width: 180px;
+	padding-right:20px;
 }
 .form-style-5 div {
     padding: 4%;
@@ -150,11 +151,14 @@ textarea.parsley-error {
 .parsley-errors-list.filled {
   opacity: 1;
 }
-
-/*
 #alfakwasy, #czasGotowania, #iloscChmielu {
-  width:60px; float:left;    text-align: center;
+  width:80px; float:left;    text-align: center;
 }
+#alfakwasyLabel, #czasGotowaniaLabel, #iloscChmieluLabel {
+   float:left;  padding-right:10px;
+}
+/*
+
 .form-style-5 fieldset div {
   margin-top:20px;
   padding:0px 6px 0px 6px ;
