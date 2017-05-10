@@ -53,7 +53,6 @@ myApp.controller('ibuController', ['$scope', '$element', '$rootScope', '$documen
 		if (showRemove) $(".remove").hide();
 	}
 //////////////////////////////////
-console.log($scope.choices)
 	$http.get('public/controllers/chmiele.json')
        .then(function(res){
           $scope.options = res.data;  
@@ -61,12 +60,27 @@ console.log($scope.choices)
         });
        	// console.log($scope.options[0])
 ////////////////////////////////////////////
+////////////////   method choice          //////////////////
+$scope.methods = [
+        {
+          name: 'Metoda Ragera',
+          value: 'Ragera'
+        }, 
+        {
+          name: 'Metoda Tinsetha',
+          value: 'Tinsetha'
+        }
+    ];
+
+     $scope.methodChoice = $scope.methods[0];
+////////////////////////////////////////////
 	$scope.isValid = false;
 
 	$scope.submit = function(form) { // angular will do whatever you say in here. // default form action prevented. }
 
 		$scope.isValid = true;
 		var data = {
+			method: $scope.methodChoice,
 			choices: $scope.choices,
 			ibuController: $scope.ibuController
 		};

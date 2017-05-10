@@ -20,19 +20,19 @@ function checkInput(textbox) {
 
 <div class="form-style-5" ng-controller="ibuController">
 <form  id="form1" name="form1" class="form-wrapper" method="post" ng-submit="form1.$valid && submit(form1)" novalidate>
-  <div id ="first">
-    <label for="iloscBrzeczki">Ilość brzeczki w (L)</label>
-<!--     <input required  id="iloscBrzeczki"type="number" value="{18.93}" size="24" ng-init="ibuController.iloscBrzeczki=18.93" ng-model="ibuController.iloscBrzeczki"/> -->
-    <input required  id="iloscBrzeczki"type="number" size="24" ng-model="ibuController.iloscBrzeczki"/>
-<!--      <span class="help-block" ng-show="ibuController.errorName"></span>  -->
+  <div>
+    <label for="nazwaMetody">Wybierz metode</label>
+    <!-- <select onchange="displayVals(this.value)" id="brew_styles" style="height:42px; display:inline-block"> -->
+    <select ng-model="methodChoice" ng-init="methodChoice = methodChoice || [0].value" style="height:42px; display:inline-block;" data-ng-change="form1.$valid && submit(form1)" ng-options="method.name for method in methods">>
+    </select>
   </div>
-  <!-- <div>
-    <label for="czasGotowania">Czas gotowania</label>
-    <input required id="czasGotowania" type="number" value="{60}" size="24" ng-init="ibuController.czasGotowania=60" ng-model="ibuController.czasGotowania"/>
-  </div> -->
+
+  <div>
+    <label for="iloscBrzeczki">Ilość brzeczki w (L)</label>
+    <input required  id="iloscBrzeczki"type="number" size="24" ng-model="ibuController.iloscBrzeczki"/>
+  </div>
   <div>
     <label for="gestoscBrzeczki">Gęstość Brzeczki (Plato)</label>
-<!--     <input required id="gestoscBrzeczki" type="number" value="{12.38}" size="24" ng-init="ibuController.gestoscBrzeczki=12.38" ng-model="ibuController.gestoscBrzeczki" /> -->
     <input required id="gestoscBrzeczki" type="number" size="24" ng-model="ibuController.gestoscBrzeczki" />
     </div>
     <fieldset  data-ng-repeat="choice in choices">
@@ -41,7 +41,6 @@ function checkInput(textbox) {
 <!-- end start and remove -->
   <div>
     <label style="padding:8px 10px 0px 0px;" for="nazwaChmielu">Nazwa {choice.id}</label>
-    <!-- <select onchange="displayVals(this.value)" id="brew_styles" style="height:42px; display:inline-block"> -->
     <select ng-model="option" ng-init="option" style="height:42px; display:inline-block;" data-ng-change="form1.$valid && submit(form1)" ng-options="option.value as option.name for option in options" >
 </select>
   </div>
@@ -61,13 +60,9 @@ function checkInput(textbox) {
   </br><b><div class="ibuSingle" id='ibuSinge{choice.ibuSingeHop}' ng-model="choice.ibuSingeHop"></div></b>
 
 <!-- start add and remve -->
-<!--   <div id="buttons" style="margin-top:40px"> -->
     <input type="button" class="remove" ng-show="$last" ng-hide="hideRetry()" value="Usuń chmiel" ng-click="removeChoice()"/>
 
    <input type="button" class="addfields" value="Dodaj kolejny chmiel" ng-click="addNewChoice()"/>
-<!--     </div> -->
-<!--     <div id='ibuSinge{choice.ibuSingeHop}' ng-model="choice.ibuSingeHop"></div> -->
-
    </fieldset>
  
   <div id="buttons">
