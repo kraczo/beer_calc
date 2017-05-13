@@ -91,12 +91,17 @@ $scope.methods = [
 			$('#response').empty();
 			if (!newItemNo) newItemNo = 1;
 			for (var i = 0; i < newItemNo; i++) {
-				$('#ibuSingehop' + i).html(res.data.ibuSingleHop[i] + ' ibu').css({
+				$('#ibuSingehop' + i).html(res.data.ibuSingleHop[i] + ' ibu').show().css({
 					"font-size": "20px"
 				});
 			}
-
-			$('#response').append('<span style="color:green">Suma szacowanej wartości IBU to ' + res.data.ibu + '</span>');
+		console.log($scope.choices);
+		// if($scope.choices.alfakwasy === null || $scope.choices.czasGotowania === null || $scope.choices.iloscChmielu === null){
+		// 	$('.ibuSingle').hide()
+		// 	$('#response').hide();
+		// }
+		// else
+			$('#response').show().append('<span style="color:green">Suma szacowanej wartości IBU to ' + res.data.ibu + '</span>');
 		}
 
 		function failCallbacks(err) {
@@ -104,6 +109,46 @@ $scope.methods = [
 		}
 
 	}
+
+	$scope.reset = function() { // angular will do whatever you say in here. // default form action prevented. }
+$scope.choices[0] = {};
+		for (var i = 0; i < $scope.choices.length; i++) {
+				 $scope.choices[i] = {};
+			}
+
+		$('.ibuSingle').hide()
+		$('#response').hide();
+	}
+}])
+
+myApp.controller('wydajnoscZacieraniaController', ['$scope', '$element', '$rootScope', '$document', '$http', function($scope, $element, $rootScope, $document, $http) {
+
+	$scope.submit = function(form) { // angular will do whatever you say in here. // default form action prevented. }
+
+		var data = $scope.wydajnoscZacieraniaController;
+
+		$http.post('/wydajnoscZacierania', data).then(doneCallbacks, failCallbacks);
+
+		function doneCallbacks(res) {
+			$('#response').empty();
+			$('#ciezarWlasciwy').html('ciężar właściwy '+res.data.ciezarWlasciwy).css({
+					"padding": "0px"
+				}).show();
+			$('#response').show().append('<span style="color:green">Wydajnosc zacierania to ' + res.data.wydajnoscZacierania + ' %'+ '</span>');
+			}
+
+			function failCallbacks(err) {
+			console.log(err);
+			}
+	}
+
+	$scope.reset = function() { // angular will do whatever you say in here. // default form action prevented. }
+		$scope.wydajnoscZacieraniaController = {};
+
+		$('#ciezarWlasciwy').hide()
+		$('#response').hide();
+	}
+
 }])
 
 // operacje na bazie danych

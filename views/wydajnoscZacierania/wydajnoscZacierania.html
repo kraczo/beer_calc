@@ -1,0 +1,32 @@
+ <div class="allForm">
+ <h1 id="tytul_kalkulator">Kalkulator wydajności zacierania</h1>
+
+<div class="form-style-5" ng-controller="wydajnoscZacieraniaController">
+<form  id="form1" name="form1" class="form-wrapper" method="post" ng-submit="form1.$valid && submit(form1)" novalidate>
+  <div>
+    <label for="iloscBrzeczki">Ilość brzeczki w (L)</label>
+    <input required  id="iloscBrzeczki"type="number" size="24" ng-model="wydajnoscZacieraniaController.iloscBrzeczki"/>
+  </div>
+  <div>
+    <label for="gestoscBrzeczki">Gęstość Brzeczki (Plato)</label>
+    <input required id="gestoscBrzeczki" type="number" size="24" ng-model="wydajnoscZacieraniaController.gestoscBrzeczki" data-ng-change="form1.$valid && submit(form1)" />
+  </div>
+  <div>
+    <label for="zasyp">Zasyp (kg)</label>
+    <input required  id="zasyp" type="number" size="24" ng-model="wydajnoscZacieraniaController.zasyp" data-ng-change="form1.$valid && submit(form1)"/>
+  </div>
+
+  <b><div class="ciezarWlasciwy" id='ciezarWlasciwy' ng-model="wydajnoscZacieraniaController.ciezarWlasciwy"></div></b>
+ 
+  <div id="buttons">
+    <input type="submit" name="submit_1" value="Submit"/>
+    <input type="reset" name="reset" ng-click="reset()" value="Reset" />
+  </div>
+</form>
+</div>
+<div id="loader2"></div>
+<div id="response"></div>
+
+</div>
+
+<div id="disqus_thread"></div>

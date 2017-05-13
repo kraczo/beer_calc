@@ -59,6 +59,9 @@ var plugins = [
         register: require('./modules/zawartoscAlkoholu/index.js')
     }, {
         register: require('./modules/obliczIBU/index.js')
+    },
+    {
+        register: require('./modules/wydajnoscZacierania/index.js')
     }
 ];
 

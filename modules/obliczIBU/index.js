@@ -38,7 +38,6 @@ function obliczIbu(payload) {
 	var iloscBrzeczki = payload.ibuController.iloscBrzeczki;
 	var gestoscBrzeczki = payload.ibuController.gestoscBrzeczki;
 	var gestoscBrzeczkiOG = 260/(260 - gestoscBrzeczki);
-	console.log('gestoscBrzeczkiOG = ' + gestoscBrzeczkiOG);
 	var ibuResponseObject = {};
 	var ibu = null;
 	var ibuSingleHop = [];
@@ -65,15 +64,10 @@ function obliczIbu(payload) {
 			alfakwasy = object['alfakwasy'];
 			czasGotowania = object['czasGotowania'];
 		}
-		console.log(payload.choices)
 
-		console.log(testOG);
 		var drugaSkladnia = iloscBrzeczki * ( 1 + testOG);
-		console.log('drugaSkladnia = ' + drugaSkladnia);
 		wykorzystanieChmielu = 18.18 + 13.86 * Math.tanh((czasGotowania - 31.32) / 18.27);
 		var pierwszaSkladnia = (iloscChmielu * wykorzystanieChmielu * alfakwasy)/10;
-		console.log('pierwszaSkladnia = ' + pierwszaSkladnia);
-		console.log('wykorzystanieChmielu = ' + wykorzystanieChmielu)
 		ibuSingleHop[i] = pierwszaSkladnia / drugaSkladnia;
 		ibuSingleHop[i] = ibuSingleHop[i].toFixed(1);
 
