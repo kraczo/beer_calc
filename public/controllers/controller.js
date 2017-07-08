@@ -151,6 +151,39 @@ myApp.controller('wydajnoscZacieraniaController', ['$scope', '$element', '$rootS
 
 }])
 
+myApp.controller('korektaReflektometrController', ['$scope', '$element', '$rootScope', '$document', '$http', function($scope, $element, $rootScope, $document, $http) {
+
+	$scope.submit = function(form) { // angular will do whatever you say in here. // default form action prevented. }
+
+		var data = $scope.korektaReflektometrController;
+
+		$http.post('/korektaReflektometr', data).then(doneCallbacks, failCallbacks);
+
+			function doneCallbacks(res) {
+			$('#response').empty();
+			// $('#fg').html('FG '+ res.data.fg).css({
+			// 		"padding": "0px"
+			// 	}).show();
+			$('#fg').html('Właściwa gęstość '+ res.data.blg).css({
+			 		"padding": "0px"
+			 	}).show();
+			$('#response').show().append('<span style="color:green">Właściwa gęstość to ' + res.data.blg + ' BLG</span>');
+			}
+
+			function failCallbacks(err) {
+			console.log(err);
+			}
+	}
+
+	$scope.reset = function() { // angular will do whatever you say in here. // default form action prevented. }
+		$scope.korektaReflektometrController = {};
+
+		$('#ciezarWlasciwy').hide()
+		$('#response').hide();
+	}
+
+}])
+
 // operacje na bazie danych
 
 // myApp.controller('AppCtrl',['$scope','$http', function($scope, $http) {

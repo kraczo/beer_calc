@@ -62,6 +62,9 @@ var plugins = [
     },
     {
         register: require('./modules/wydajnoscZacierania/index.js')
+    },
+    {
+        register: require('./modules/korektaReflektometr/index.js')
     }
 ];
 

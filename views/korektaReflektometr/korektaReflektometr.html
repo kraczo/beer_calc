@@ -1,0 +1,28 @@
+ <div class="allForm">
+ <h1 id="tytul_kalkulator">Kalkulator korety zmierzonej przy pomocy reflektometru przefermentowanej brzeczki</h1>
+
+<div class="form-style-5" ng-controller="korektaReflektometrController">
+<form  id="form1" name="form1" class="form-wrapper" method="post" ng-submit="form1.$valid && submit(form1)" novalidate>
+  <div>
+    <label for="poczatkowaGestosc">Początkowa gęstość (Brix)</label>
+    <input required  id="poczatkowaGestosc"type="number" size="24" ng-model="korektaReflektometrController.poczatkowaGestosc" data-ng-change="form1.$valid && submit(form1)"/>
+  </div>
+  <div>
+    <label for="koncowaGestosc">Końcowa gęstość (Brix)</label>
+    <input required id="koncowaGestosc" type="number" size="24" ng-model="korektaReflektometrController.koncowaGestosc" data-ng-change="form1.$valid && submit(form1)" />
+  </div>
+
+  <b><div class="fg" id='fg' ng-model="korektaReflektometrController.fg"></div></b>
+ 
+  <div id="buttons">
+    <input type="submit" name="submit_1" value="Submit"/>
+    <input type="reset" name="reset" ng-click="reset()" value="Reset" />
+  </div>
+</form>
+</div>
+<div id="loader2"></div>
+<div id="response"></div>
+
+</div>
+
+<div id="disqus_thread"></div>
